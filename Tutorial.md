@@ -16,7 +16,22 @@ Under the `Player` game object, create a empty game object to act as the player 
 
 Under the `Player` game object, create a empty game object to act as the camera position and name this to `CameraPosition` and move this to where you would like the camera to be positioned on the player.
 
-
 Now create a new empty game object seperate from the `Player` and name this `CameraHolder`, drag the `Main Camera` under this new game object and reset the transform via the inspector.
 
 ## 2. Create scripts for the player and camera controllers.
+
+In the `Project` window of the editor, create a folder and call it `Scripts`.
+
+Under this new folder create a new script and call it `MoveCamera`.
+
+In this script we are making sure that the `CameraHolder` is set to the `CameraPosition` game object under the `Player`:
+```.cs
+public class MoveCamera : MonoBehaviour
+{
+    public Transform cameraPosition;
+    private void Update()
+    {
+        transform.position = cameraPosition.position;
+    }
+}
+```
