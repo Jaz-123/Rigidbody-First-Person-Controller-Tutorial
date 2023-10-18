@@ -85,7 +85,7 @@ public class PlayerCamera : MonoBehaviour
 }
 ```
 
-Now go back into Unity and drag the `PlayerCamera` script onto the `Main Camera` object, assign the `Orientation` object to the `Camera Orientaion` field int the script. You can now adjust the `Camera Clamp Angle` to your liking, this stops the camera from going past the given threshold when moving the `Main Camera` verticaly.
+Now go back into Unity and drag the `PlayerCamera` script onto the `Main Camera` object, assign the `Orientation` object to the `Camera Orientation` field int the script. You can now adjust the `Camera Clamp Angle` to your liking, this stops the camera from going past the given threshold when moving the `Main Camera` verticaly.
 
 ## 3. Create scripts to control the player.
 
@@ -209,6 +209,6 @@ public class PlayerController : MonoBehaviour
 }
 ```
 
-Now go back into Unity and drag the `PlayerController` script onto the `Player` object, assign the `Orientation` object to the `Orientaion` field int the script. You can now adjust the values to your liking.
+Now go back into Unity and drag the `PlayerController` script onto the `Player` object, assign the `Orientation` object to the `Orientation` field int the script. You can now adjust the values to your liking.
 
-
+You can now test the scene yourself, or by running the demo scene provided.
