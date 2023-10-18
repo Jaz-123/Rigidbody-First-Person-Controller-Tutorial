@@ -35,3 +35,14 @@ public class MoveCamera : MonoBehaviour
     }
 }
 ```
+
+Now go back into Unity and drag the `MoveCamera` script under the `CameraHolder` game object, now under `Camera Position` in the script drag the `CameraPosition` game object from under the `Player` into this field.
+
+
+
+
+
+
+
+
+
