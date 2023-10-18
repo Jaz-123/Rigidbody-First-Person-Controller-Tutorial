@@ -70,8 +70,8 @@ public class PlayerCamera : MonoBehaviour
     private void Update()
     {
         //Get input from mouse
-        _mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * xSensitivity;
-        _mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * ySensitivity;
+        _mouseX = Input.GetAxisRaw("Mouse X") * Time.fixedDeltaTime * xSensitivity;
+        _mouseY = Input.GetAxisRaw("Mouse Y") * Time.fixedDeltaTime * ySensitivity;
         _yRotation += _mouseX;
         _xRotation -= _mouseY;
         //Clamp camera angle
