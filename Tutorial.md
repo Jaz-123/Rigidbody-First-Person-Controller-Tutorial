@@ -18,7 +18,7 @@ Under the `Player` game object, create a empty game object to act as the camera 
 
 Now create a new empty game object seperate from the `Player` and name this `CameraHolder`, drag the `Main Camera` under this new game object and reset the transform via the inspector.
 
-## 2. Create scripts for the player and camera controllers.
+## 2. Create scripts to control the camera.
 
 In the `Project` window of the editor, create a folder and call it `Scripts`.
 
@@ -36,7 +36,9 @@ public class MoveCamera : MonoBehaviour
 }
 ```
 
-Now go back into Unity and drag the `MoveCamera` script under the `CameraHolder` game object, now under `Camera Position` in the script drag the `CameraPosition` game object from under the `Player` into this field.
+Now go back into Unity and drag the `MoveCamera` script under the `CameraHolder` game object, now under `Camera Position` in the script, drag the `CameraPosition` game object from under the `Player` into this field.
+
+### 3. Hello
 
 
 
