@@ -20,6 +20,8 @@ Now create a new empty game object seperate from the `Player` and name this `Cam
 
 ## 2. Create scripts to control the camera.
 
+### Script to move camera position with the position of the player.
+
 In the `Project` window of the editor, create a folder and call it `Scripts`.
 
 Under this new folder create a new script and call it `MoveCamera`.
@@ -38,8 +40,50 @@ public class MoveCamera : MonoBehaviour
 
 Now go back into Unity and drag the `MoveCamera` script under the `CameraHolder` game object, now under `Camera Position` in the script, drag the `CameraPosition` game object from under the `Player` into this field.
 
-### 3. Hello
+### Script to control the movement of the camera.
 
+In the scripts folder create a new script and call it `PlayerCamera`.
+
+This script contols the movement of the `Main Camera` with your mouse:
+```.cs
+public class PlayerCamera : MonoBehaviour
+{
+    [Header("Camera Properties")]
+    public float xSensitivity = 400f;
+    public float ySensitivity = 400f;
+    [Range(40f, 90f)]public float cameraClampAngle = 80f;
+
+    public Transform cameraOrientation;
+
+    private float _xRotation;
+    private float _yRotation;
+    private float _mouseX;
+    private float _mouseY;
+
+    private void Start()
+    {
+        //Hide cursor and lock it to the screen
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    private void Update()
+    {
+        //Get input from mouse
+        _mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * xSensitivity;
+        _mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * ySensitivity;
+        _yRotation += _mouseX;
+        _xRotation -= _mouseY;
+        //Clamp camera angle
+        _xRotation = Mathf.Clamp(_xRotation, -cameraClampAngle, cameraClampAngle);
+        //Apply rotations to camera and orientation
+        transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0f);
+        cameraOrientation.rotation = Quaternion.Euler(0f, _yRotation, 0f);
+    }
+}
+```
+
+Now go back into Unity and drag the `PlayerCamera` script onto the `Main Camera` object, assign the `Orientation` object to the `Camera Orientaion` field int the script. You can now adjust the `Camera Clamp Angle` to your liking, this stops the camera from going past the given threshold when moving the `Main Camera` verticaly.
 
 
 
