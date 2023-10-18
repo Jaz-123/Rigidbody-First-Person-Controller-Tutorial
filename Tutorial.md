@@ -8,6 +8,6 @@ Start by creating a new empty scene calling it whatever you like.
 
 Create a new empty game object and name it `Player`.
 
-To this game object, add a rigidbody and set the `Collision Detection` to `Continuous`, set `Interpolate` to `Interpolate`.
+To this game object, add a rigidbody and set the `Collision Detection` to `Continuous`, set `Interpolate` to `Interpolate`,  and freeze the X, Y and Z rotation under constraints.
 
 Under the `Player` game object, create a 3D capsule to act as the player object.
