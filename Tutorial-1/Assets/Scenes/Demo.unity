@@ -425,8 +425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9eaaa85a7474b4c9bf3c4a03029b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSensitivity: 400
-  ySensitivity: 400
+  xSensitivity: 200
+  ySensitivity: 200
   cameraClampAngle: 80
   cameraOrientation: {fileID: 1181173758}
 --- !u!1 &965304298

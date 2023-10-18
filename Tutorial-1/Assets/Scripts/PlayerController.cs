@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         GroundCheck();
         GetInput();
+        SpeedControl();
         HandleDrag();
     }
 
@@ -66,5 +67,17 @@ public class PlayerController : MonoBehaviour
     {
         //If the player is grounded, set the drag levels to the groundDrag value otherwise set to 0
         _playerRigidbody.drag = _isGrounded ? groundDrag : 0f;
+    }
+
+    private void SpeedControl()
+    {
+        //Calculate the flat velocity of the player and if it exceds the movement speed then calculate the force to apply to 
+        //limit the speed of the player
+        Vector3 flatVelocity = new Vector3(_playerRigidbody.velocity.x, 0f, _playerRigidbody.velocity.z);
+        if (flatVelocity.magnitude > movementSpeed)
+        {
+            Vector3 limitedVelocity = flatVelocity.normalized * movementSpeed;
+            _playerRigidbody.velocity = new Vector3(limitedVelocity.x, _playerRigidbody.velocity.y, limitedVelocity.z);
+        }
     }
 }
