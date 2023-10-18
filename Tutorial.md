@@ -6,6 +6,8 @@ This tutorial shows how to create an easily expandable first person rigidbody co
 
 Start by creating a new empty scene calling it whatever you like.
 
+Create a new `Layer` and name it `Ground`, set your ground to this new layer, this will be used for ground detection later.
+
 Create a new empty game object and name it `Player`.
 
 To this game object, add a rigidbody and set the `Collision Detection` to `Continuous`, set `Interpolate` to `Interpolate`,  and freeze the `X`, `Y` and `Z` rotation under `Constraints`.
@@ -85,9 +87,13 @@ public class PlayerCamera : MonoBehaviour
 
 Now go back into Unity and drag the `PlayerCamera` script onto the `Main Camera` object, assign the `Orientation` object to the `Camera Orientaion` field int the script. You can now adjust the `Camera Clamp Angle` to your liking, this stops the camera from going past the given threshold when moving the `Main Camera` verticaly.
 
+## 3. Create scripts to control the player.
 
+### Script to control player movement.
 
+In the scripts folder create a new script and call it `PlayerController`.
 
+This script contols the movement of the `Player` with inputs from your keyboard:
 
 
 
